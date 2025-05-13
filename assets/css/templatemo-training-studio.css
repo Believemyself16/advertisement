@@ -680,7 +680,8 @@ features
 }
 
 .feature-item .right-content {
-  display: inline;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-item .right-content h4 {
@@ -764,7 +765,7 @@ Our Classes
   text-transform: capitalize;
   width: 100%;
   padding: 30px 30px;
-  display: inline-block;
+  display: flex;
   background-color: #fff;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
   border-radius: 5px;
@@ -791,7 +792,8 @@ Our Classes
   background-color: #f9735b;
 }
 #tabs ul li a img {
-  max-width: 100%;
+  width: 50px;
+  height: 50px;
   margin-right: 20px;
 }
 #tabs ul .ui-tabs-active span {
@@ -801,6 +803,7 @@ Our Classes
   border-bottom: none;
 }
 #tabs ul .ui-tabs-active a {
+  display: flex;
   color: #ed563b;
 }
 #tabs ul .ui-tabs-active span {
