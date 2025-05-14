@@ -953,8 +953,11 @@ trainers
 }
 
 #trainers .trainer-item img {
+  max-width: 209px;
+  max-height: 209px;
   width: 100%;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 #trainers .trainer-item span {
@@ -1249,4 +1252,64 @@ responsive
   .feature-item .right-content a.text-button {
     margin-left: 130px;
   }
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 999; 
+  left: 0; top: 0; width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.modal-content .close {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 10px;
+}
+
+.modal-content h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+}
+
+.form-field label {
+  min-width: 100px;
+  text-align: left;
+  margin: 0;
+}
+
+.modal-content input,
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+}
+
+.modal-content button {
+  border: none;
+  background-color: #ed563b;
+  color: #fff;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
 }

@@ -24,6 +24,29 @@ https://templatemo.com/tm-548-training-studio
     <link rel="stylesheet" href="assets/css/templatemo-training-studio.css">
 
     </head>
+
+    <script>
+        function openModal(id) {
+          document.getElementById(id).style.display = "block";
+        }
+        
+        function closeModal(id) {
+          document.getElementById(id).style.display = "none";
+        }
+        
+        function handleSignup() {
+          const form = document.getElementById('signupForm');
+          
+          // Trigger native validation
+          if (form.checkValidity()) {
+            closeModal('signupModal');
+            openModal('successModal');
+          } else {
+            // If invalid, trigger browser's validation messages
+            form.reportValidity();
+          }
+        }
+        </script>       
     
     <body>
     
@@ -48,16 +71,16 @@ https://templatemo.com/tm-548-training-studio
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">Stella<em>Ris</em></a>
+                        <a href="index.html" class="logo"><em>Stella</em></a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="#top" class="active">TRANG CHỦ</a></li>
-                            <li class="scroll-to-section"><a href="#features">VỀ CHÚNG TÔI</a></li>
-                            <li class="scroll-to-section"><a href="#our-classes">LỚP HỌC</a></li>
+                            <li class="scroll-to-section"><a href="#features">KHOÁ HỌC</a></li>
+                            <li class="scroll-to-section"><a href="#our-classes">VỀ CHÚNG TÔI</a></li>
                             <li class="scroll-to-section"><a href="#schedule">LỊCH HỌC</a></li>
                             <li class="scroll-to-section"><a href="#contact-us">LIÊN HỆ</a></li> 
-                            <li class="main-button"><a href="#">ĐĂNG KÝ</a></li>
+                            <li class="main-button"><a href="javascript:void(0)" onclick="openModal('signupModal')">ĐĂNG KÝ</a></li>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -81,8 +104,40 @@ https://templatemo.com/tm-548-training-studio
                 <h6>Chăm hơn để khỏe hơn</h6>
                 <h2>Dễ dàng hơn với <em>gym</em></h2>
                 <div class="main-button scroll-to-section">
-                    <a href="#features">Đăng ký thành viên ngay</a>
+                    <a href="javascript:void(0)" onclick="openModal('signupModal')">Đăng ký thành viên ngay</a>
                 </div>
+            </div>
+        </div>
+
+        <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('signupModal')">
+                    <i class="fa fa-close"></i>
+                </span>
+                <h2>Đăng ký tài khoản</h2>
+                <form id="signupForm">
+                    <div class="form-field">
+                        <label>Họ và tên</label>
+                        <input type="text" required />
+                    </div>
+                    <div class="form-field">
+                        <label>Email</label>
+                        <input type="email" required />
+                    </div>
+                    <div class="form-field">
+                        <label>Mật khẩu</label>
+                        <input type="password" required />
+                    </div>
+                    <button type="button" onclick="handleSignup()">Xác nhận</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+            <span class="close" onclick="closeModal('successModal')">&times;</span>
+            <h2>Đăng ký thành công!</h2>
             </div>
         </div>
     </div>
@@ -201,7 +256,7 @@ https://templatemo.com/tm-548-training-studio
                         <h2>Thể lực <em>vượt trội</em> - Tinh thần <em>bền bỉ</em>!</h2>
                         <p>Cùng chúng tôi tạo nên phiên bản tốt nhất của chính bạn.</p>
                         <div class="main-button scroll-to-section">
-                            <a href="#our-classes">Đăng ký thành viên ngay!</a>
+                            <a href="javascript:void(0)" onclick="openModal('signupModal')">Đăng ký thành viên ngay</a>
                         </div>
                     </div>
                 </div>
